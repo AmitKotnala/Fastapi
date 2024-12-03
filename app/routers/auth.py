@@ -41,8 +41,7 @@ def create_user(user: UserCreate, db: Session = Depends(get_db)):
     
     # Generate verification token
     verification_token = SecurityService.generate_verification_token()
-    print(verification_token)
-    print(user.role)
+
     
     # Create new user
     new_user = User(
@@ -57,15 +56,14 @@ def create_user(user: UserCreate, db: Session = Depends(get_db)):
     
     try:
         db.add(new_user)
-        db.commit()
-        db.refresh(new_user)
         
         # Send verification email
         email_service.send_verification_email(
             new_user.email, 
             verification_token
         )
-        
+        db.commit()
+        db.refresh(new_user)
         return new_user
     except Exception as e:
         db.rollback()
@@ -118,7 +116,8 @@ def verify_email(
     
     db.commit()
     
-    return {"message": "Email verified successfully"}
+    return {"message": "Email verified successfully",
+            "success":True}
 
 @router.post("/login", response_model=Token)
 def login(
@@ -160,5 +159,6 @@ def login(
     
     return {
         "access_token": access_token, 
-        "token_type": "bearer", #Add succes true and expire time
+        "token_type": "bearer",
+        "success":True
     }

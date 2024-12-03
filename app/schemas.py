@@ -10,7 +10,11 @@ class LoginRequest(BaseModel):
 
 class DownloadResponse(BaseModel):
     download_link: str
-    message: str
+    success: bool
+
+class DownloadTokenResponse(BaseModel):
+    download_token : str
+    success:bool
 
 class UserBase(BaseModel):
     """
@@ -60,6 +64,7 @@ class Token(BaseModel):
     """
     access_token: str
     token_type: str
+    success : bool
 
 class FileUpload(BaseModel):
     """

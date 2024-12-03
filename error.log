@@ -1,0 +1,120 @@
+2024-12-03 14:14:22,912 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: b'{"file_id": 1, "user_id": 2, "expires_at": "2024-12-03T08:49:10.469546"}'
+==================================================================
+
+2024-12-03 14:14:22,913 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: {'file_id': 1, 'user_id': 2, 'expires_at': '2024-12-03T08:49:10.469546'}
+==================================================================
+
+2024-12-03 14:14:22,913 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: 2024-12-03 08:49:10.469546
+==================================================================
+
+2024-12-03 14:14:22,913 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: <app.models.User object at 0x7f67362cbd40>
+==================================================================
+
+2024-12-03 14:14:22,915 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: <app.models.File object at 0x7f6736314d40>
+==================================================================
+
+2024-12-03 14:19:37,732 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: b'{"file_id": 1, "user_id": 2, "expires_at": "2024-12-03T08:54:22.730993"}'
+==================================================================
+
+2024-12-03 14:19:37,732 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: {'file_id': 1, 'user_id': 2, 'expires_at': '2024-12-03T08:54:22.730993'}
+==================================================================
+
+2024-12-03 14:19:37,732 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: 2024-12-03 08:54:22.730993
+==================================================================
+
+2024-12-03 14:19:37,733 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: <app.models.User object at 0x7f4c26924080>
+==================================================================
+
+2024-12-03 14:19:37,735 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: <app.models.File object at 0x7f4c26924f20>
+==================================================================
+
+2024-12-03 14:20:36,108 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: b'{"file_id": 1, "user_id": 2, "expires_at": "2024-12-03T08:55:24.057331"}'
+==================================================================
+
+2024-12-03 14:20:36,108 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: {'file_id': 1, 'user_id': 2, 'expires_at': '2024-12-03T08:55:24.057331'}
+==================================================================
+
+2024-12-03 14:20:36,108 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: 2024-12-03 08:55:24.057331
+==================================================================
+
+2024-12-03 14:20:36,109 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: <app.models.User object at 0x7f0acf317e30>
+==================================================================
+
+2024-12-03 14:20:36,112 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: <app.models.File object at 0x7f0acf360d70>
+==================================================================
+
+2024-12-03 14:20:52,253 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: b'{"file_id": 1, "user_id": 2, "expires_at": "2024-12-03T08:55:24.057331"}'
+==================================================================
+
+2024-12-03 14:20:52,253 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: {'file_id': 1, 'user_id': 2, 'expires_at': '2024-12-03T08:55:24.057331'}
+==================================================================
+
+2024-12-03 14:20:52,253 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: 2024-12-03 08:55:24.057331
+==================================================================
+
+2024-12-03 14:20:52,253 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: <app.models.User object at 0x7f0acf361970>
+==================================================================
+
+2024-12-03 14:20:52,254 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: <app.models.File object at 0x7f0acf361af0>
+==================================================================
+
+2024-12-03 14:20:57,781 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: b'{"file_id": 1, "user_id": 2, "expires_at": "2024-12-03T08:55:24.057331"}'
+==================================================================
+
+2024-12-03 14:20:57,782 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: {'file_id': 1, 'user_id': 2, 'expires_at': '2024-12-03T08:55:24.057331'}
+==================================================================
+
+2024-12-03 14:20:57,782 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: 2024-12-03 08:55:24.057331
+==================================================================
+
+2024-12-03 14:20:57,782 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: <app.models.User object at 0x7f0acf361850>
+==================================================================
+
+2024-12-03 14:20:57,783 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: <app.models.File object at 0x7f0acf361b80>
+==================================================================
+
+2024-12-03 14:21:23,211 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: b'{"file_id": 1, "user_id": 2, "expires_at": "2024-12-03T08:55:24.057331"}'
+==================================================================
+
+2024-12-03 14:21:23,211 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: {'file_id': 1, 'user_id': 2, 'expires_at': '2024-12-03T08:55:24.057331'}
+==================================================================
+
+2024-12-03 14:21:23,211 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: 2024-12-03 08:55:24.057331
+==================================================================
+
+2024-12-03 14:21:23,211 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: <app.models.User object at 0x7f0acf3610d0>
+==================================================================
+
+2024-12-03 14:21:23,212 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: <app.models.File object at 0x7f0acf361c40>
+==================================================================
+
+2024-12-03 14:21:45,647 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: b'{"file_id": 1, "user_id": 2, "expires_at": "2024-12-03T08:55:24.057331"}'
+==================================================================
+
+2024-12-03 14:21:45,647 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: {'file_id': 1, 'user_id': 2, 'expires_at': '2024-12-03T08:55:24.057331'}
+==================================================================
+
+2024-12-03 14:21:45,647 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: 2024-12-03 08:55:24.057331
+==================================================================
+
+2024-12-03 14:21:45,647 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: <app.models.User object at 0x7f0acf361190>
+==================================================================
+
+2024-12-03 14:21:45,648 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: <app.models.File object at 0x7f0acf361820>
+==================================================================
+
+2024-12-03 14:22:36,076 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: b'{"file_id": 1, "user_id": 2, "expires_at": "2024-12-03T08:57:25.008619"}'
+==================================================================
+
+2024-12-03 14:22:36,076 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: {'file_id': 1, 'user_id': 2, 'expires_at': '2024-12-03T08:57:25.008619'}
+==================================================================
+
+2024-12-03 14:22:36,076 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: 2024-12-03 08:57:25.008619
+==================================================================
+
+2024-12-03 14:22:36,077 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: <app.models.User object at 0x7f0fe841ffe0>
+==================================================================
+
+2024-12-03 14:22:36,080 :: logging_config.py :: /home/amit/Desktop/EZ_learning/Fast_api/file_sharing_system/app/services/logging_config.py  :: INFO :: info :: 34 :: <app.models.File object at 0x7f0fe8464f80>
+==================================================================
+

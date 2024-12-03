@@ -7,8 +7,9 @@ import os
 from app.constants import ALLOWED_FILE_EXTENSIONS
 from app.database import get_db
 from app.models import User, File as FileModel, UserRole
-from app.schemas import FileResponse,DownloadResponse
+from app.schemas import DownloadTokenResponse, FileResponse,DownloadResponse
 from app.security import SecurityService
+from app.services.logging_config import Logger
 from app.services.s3_service import s3_service
 
 router = APIRouter(prefix="/files", tags=["File Operations"])
@@ -85,12 +86,12 @@ def upload_file(
             uploaded_by=current_user.id,
             file_type=os.path.splitext(file.filename)[1].lower(),
         )
-
+        file_details = convert_sqlalchemy_to_dict(db_file)
         db.add(db_file)
         db.commit()
         db.refresh(db_file)
 
-        return convert_sqlalchemy_to_dict(db_file)
+        return file_details
 
 
     except Exception as e:
@@ -122,47 +123,110 @@ def list_files(
 
 
 
-@router.get("/download/{file_id}", response_model=DownloadResponse)
-def download_file(
+# @router.get("/download/{file_id}", response_model=DownloadResponse)
+# def download_file(
+#     file_id: int,
+#     current_user: User = Depends(SecurityService.get_current_user),
+#     db: Session = Depends(get_db),
+# ):
+#     """Generate a secure, user-specific download link"""
+#     try:
+#         # Validate client user role
+#         if current_user.role != UserRole.CLIENT_USER:
+#             raise HTTPException(status_code=403, detail="Unauthorized access")
+
+#         # Find the file
+#         file = db.query(FileModel).filter(FileModel.id == file_id).first()
+#         if not file:
+#             raise HTTPException(status_code=404, detail="File not found")
+
+#         # Verify user owns the file
+#         if file.user_id != current_user.id:
+#             raise HTTPException(status_code=403, detail="Not authorized to download this file")
+
+#         # Generate secure, time-limited pre-signed URL
+#         download_link = s3_service.generate_secure_presigned_url(
+#             s3_key=file.s3_key,
+#             user_id=current_user.id,
+#             expires_in=300  # 5-minute expiration
+#         )
+
+#         return {
+#             "download_link": download_link, 
+#             "success": True
+#         }
+
+#     except HTTPException:
+#         raise
+#     except Exception as e:
+#         Logger.error(f"Download error for user {current_user.id}: {str(e)}")
+#         raise HTTPException(status_code=500, detail="Access denied")
+
+@router.get("/download-token", response_model=DownloadTokenResponse)
+def request_download_token(
     file_id: int,
     current_user: User = Depends(SecurityService.get_current_user),
-    db: Session = Depends(get_db),
 ):
     """
-    Generate a secure download link for a file
-
-    Args:
-        file_id (int): ID of the file to download
-        current_user (User): Authenticated user
-        db (Session): Database session
-
-    Returns:
-        DownloadResponse: Secure download link and success message
-
-    Raises:
-        HTTPException: If file not found or user not authorized
+    Generate a secure download token for a specific file
     """
     try:
-        # Only allow client users to download files
+        # Validate client user role
         if current_user.role != UserRole.CLIENT_USER:
-            raise HTTPException(
-                status_code=403, detail="Only Client Users can download files"
-            )
-
-        # Find the file
-        file = db.query(FileModel).filter(FileModel.id == file_id).first()
-        if not file:
-            raise HTTPException(status_code=404, detail="File not found")
-
-        # Generate pre-signed URL
-        download_link = s3_service.generate_presigned_url(file.s3_key)
-
+            raise HTTPException(status_code=403, detail="Unauthorized access")
+        # Generate and return the download token
+        download_token = s3_service.generate_download_token(
+            file_id=file_id, 
+            user_id=current_user.id
+        )
+        
         return {
-            "download_link": download_link, 
+            "download_token": download_token,
             "success": True
         }
-
     except Exception as e:
-        # Log the actual exception
-        print(f"Download file error: {str(e)}")
-        raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+        Logger.error(f"Token generation error for user {current_user.id}: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to generate download token")
+    
+@router.get("/download/{token}", response_model=DownloadResponse)
+def download_file(
+    token: str,
+    current_user: User = Depends(SecurityService.get_current_user),
+    db: Session = Depends(get_db)
+):
+    """
+    Download file using a secure, encrypted token
+    """
+    try:
+        # Validate and decrypt the token
+        payload = s3_service.validate_download_token(token)
+        Logger.info(current_user)
+        # Extract file and user details
+        file_id = payload['file_id']
+        user_id = payload['user_id']
+        # Find the file
+        file = db.query(FileModel).filter(FileModel.id == file_id).first()
+        Logger.info(file)
+        if not file:
+            raise HTTPException(status_code=404, detail="File not found")
+        
+        # Verify user owns the file
+        if file.id!= file_id or current_user.id!=user_id:
+            raise HTTPException(status_code=403, detail="Not authorized to download this file")
+        
+        # Generate pre-signed URL
+        download_link = s3_service.generate_presigned_url(
+            s3_key=file.s3_key,
+            expiration=300  # 5-minute expiration
+        )
+
+        return {
+            "download_link": download_link,
+            "success": True
+        }
+    
+    except HTTPException:
+        raise
+    except Exception as e:
+        Logger.error(f"Download error for token {token}: {str(e)}")
+        raise e
